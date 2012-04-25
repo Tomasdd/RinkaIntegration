@@ -1,0 +1,3 @@
+[submodule "vendor/RinkaAsi"]
+	path = vendor/RinkaAsi
+	url = git://github.com/evp/RinkaAsi.git

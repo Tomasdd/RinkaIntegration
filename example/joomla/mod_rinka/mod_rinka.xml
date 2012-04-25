@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5">
+    <name>Rinka.lt skelbimai</name>
+    <author>EVP International</author>
+    <creationDate>2012-02-08</creationDate>
+    <copyright>(C) 2012 EVP International</copyright>
+    <authorEmail>pagalba@rinka.lt</authorEmail>
+    <authorUrl>www.rinka.lt</authorUrl>
+    <files>
+        <filename module="mod_rinka">mod_rinka.php</filename>
+    </files>
+    <params />
+</install>

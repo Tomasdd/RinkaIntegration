@@ -1,0 +1,1 @@
+<?php return unserialize('a:6:{s:13:"defaultCities";a:0:{}s:19:"isUnderConstruction";s:1:"0";s:8:"username";s:8:"username";s:8:"password";s:8:"password";s:19:"announcementListUrl";s:17:"?option=com_rinka";s:21:"insertAnnouncementUrl";s:29:"?option=com_rinka&task=insert";}');

@@ -1,0 +1,2 @@
+<?php
+return '<div id="adBoxContainer">Kraunama...</div><script type="text/javascript">(function(){function a(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src="/rinka/ad_block.php";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}if(window.attachEvent)window.attachEvent("onload",a);else window.addEventListener("load",a,false)})()</script>';

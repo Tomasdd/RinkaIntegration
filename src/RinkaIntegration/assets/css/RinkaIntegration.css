@@ -1,0 +1,173 @@
+.clear {
+    clear: both;
+}
+
+
+.RinkaIntegration_required {
+    color: red;
+    float: left;
+}
+.RinkaIntegration_fieldDescription {
+    float: left;
+}
+
+
+div.pagination {
+    padding: 3px;
+    margin: 3px;
+    text-align: center;
+}
+div.pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #AAAADD;
+
+    text-decoration: none; /* no underline */
+    color: #000099;
+}
+div.pagination a:hover, div.digg a:active {
+    border: 1px solid #000099;
+    color: #000;
+}
+div.pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #000099;
+
+    font-weight: bold;
+    background-color: #000099;
+    color: #FFF;
+}
+div.pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #EEE;
+    color: #DDD;
+}
+
+
+#announcements {
+    float: left;
+    width: 641px;
+    text-align: center;
+}
+.announcement {
+    width: 640px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+.announcement_description {
+    float: left;
+    width: 505px;
+    padding: 1px;
+    overflow: auto;
+    text-align: left;
+}
+.announcement_leftsidebar {
+    padding: 5px;
+    float: left;
+}
+.announcement_picture {
+    margin-top: 5px;
+    width: 140px;
+    height: 100px;
+}
+.announcement_leftsidebar_picture img {
+    width: 122px;
+    height: 90px;
+}
+.announcement_category {
+    text-align: left;
+}
+.announcement_category ul li {
+    float: left;
+    font-size: 10px;
+    margin-right: 45px;
+    margin-left: -25px;
+}
+
+
+#insertForm_imagesBlock_wrapper {
+    float: left;
+    padding: 10px;
+    margin-top: 5px;
+}
+#insertForm_contactsBlock_wrapper {
+    float: left;
+    margin: 5px 50px 0px 0px;
+    padding: 10px;
+    width: 285px;
+}
+#insertForm_formFields_wrapper {
+    padding: 10px;
+}
+#insertForm_submit_wrapper {
+    text-align: center;
+}
+#insertForm_submit_wrapper input[type=submit] {
+    width: 400px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+.announcements_box {
+    border: 1px solid #ddd;
+    width: 280px;
+    font-size: 13px;
+}
+.announcements_box p {
+    padding: 1px;
+    margin: 0;
+}
+.announcements_box .announcements_box_announcement {
+    border-bottom: 1px dotted #ddd;
+    width: 220px;
+    margin-bottom: 5px;
+}
+.announcements_box ul {
+    padding: 0;
+    margin-left: 20px;
+    list-style-type: none;
+}
+.announcements_box_menu li a {
+    float: left;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 1px 5px 0px 0px;
+    cursor: pointer;
+}
+.announcements_box_menu li a:hover {
+    background: #ddd;
+}
+.announcements_box li a:active, .announcements_box li a:visited, .announcements_box li a {
+    color: black;
+}
+.announcements_box li a:active:hover, .announcements_box li a:visited:hover, .announcements_box li a:hover {
+    color: #555;
+}
+
+.multiselect {
+    padding: 1px;
+    width: 270px;
+    height: 120px;
+    overflow: auto;
+    margin-top: 5px;
+}
+
+.RinkaIntegration_multiSelectCheckAll {
+    float: left;
+    margin-top: -1px;
+    margin-left: 5px;
+}
+.RinkaIntegration_multiSelectCheckAll input[type=button] {
+    margin-top: -2px;
+}
+
+.RinkaIntegration_field {
+    padding: 3px;
+    margin-bottom: 1px;
+}

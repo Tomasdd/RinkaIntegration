@@ -1,0 +1,1 @@
+Skelbimas ištrintas ar baigėsi jo galiojimo laikas.
