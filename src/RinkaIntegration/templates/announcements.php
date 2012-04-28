@@ -94,6 +94,9 @@
                     <?php endforeach; ?>
                 <?php endforeach; ?>
             </select>
+
+            Paieška
+            <input type="text" name="fulltext_search" value="<?php echo $formValues['fulltext_search']; ?>" />
             <input type="submit" name="submit" value="Filtruoti" style="width: 100px" />
         </div>
     </form>

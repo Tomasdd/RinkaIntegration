@@ -220,9 +220,14 @@ class RinkaIntegration {
         $limit = isset($get['limit'])
             ? (intval($get['limit']) === 0 ? 20 : intval($get['limit']))
             : 20;
-
         $filter->setPagingPage($page-1);
         $filter->setPagingLimit($limit);
+
+        // Full text search
+        $fullTextSearch = !empty($get['fulltext_search'])
+            ? $get['fulltext_search']
+            : '';
+        $filter->setFulltextSearch($fullTextSearch);
 
         // Order
         $order = explode('_', isset($get['order']) ? $get['order'] : 'date_desc');
@@ -292,6 +297,7 @@ class RinkaIntegration {
             'formValues'    => array(
                 'limit'    => $limit,
                 'category' => $categoryPath,
+                'fulltext_search' => $fullTextSearch,
                 'page'     => $page,
                 'order'    => implode('_', $order),
             ),
