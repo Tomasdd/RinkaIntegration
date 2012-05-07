@@ -70,6 +70,9 @@ var locationService = {
     },
 
     getChildren: function (nodeId, nodeType) {
+        if (nodeId == nodeType) {
+            return false;
+        }
         if (!locationService.isLocationServiceReady()) {
             return false;
         }
