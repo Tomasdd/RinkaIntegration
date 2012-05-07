@@ -105,7 +105,7 @@ class RinkaIntegration {
 
         $url              = $this->config->getUrl('insertAnnouncement');
         $categoryPath     = (isset($get['category']) && !empty($get['category']))
-            ? $get['category']
+            ? urldecode($get['category'])
             : null;
 
         // Handle 3)
