@@ -210,7 +210,7 @@ class RinkaIntegration {
         }
 
         $categoryPath     = (isset($get['category']) && !empty($get['category']))
-            ? $get['category']
+            ? urldecode($get['category'])
             : null;
 
         // Pagination
@@ -225,12 +225,12 @@ class RinkaIntegration {
 
         // Full text search
         $fullTextSearch = !empty($get['fulltext_search'])
-            ? $get['fulltext_search']
+            ? urldecode($get['fulltext_search'])
             : '';
         $filter->setFulltextSearch($fullTextSearch);
 
         // Order
-        $order = explode('_', isset($get['order']) ? $get['order'] : 'date_desc');
+        $order = explode('_', isset($get['order']) ? urldecode($get['order']) : 'date_desc');
         $filter->setOrders(array(
             RinkaAsiFilter::ORDER_BY_SITE => $this->config->getConfigValue(array('sourceBase')),
             constant('RinkaAsiFilter::ORDER_BY_'. strtoupper($order[0])) => constant('RinkaAsiFilter::ORDER_'. strtoupper($order[1])),
@@ -241,7 +241,7 @@ class RinkaIntegration {
             $filter->setCategory(explode('/', $categoryPath));
         }
 
-        $cityPath = !empty($get['city']) ? $get['city'] : null;
+        $cityPath = !empty($get['city']) ? urldecode($get['city']) : null;
         if (!empty($cityPath)) {
             $cityPath = explode('/', $cityPath);
             $filter->setCities(array($cityPath));
