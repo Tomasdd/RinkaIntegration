@@ -62,10 +62,10 @@
                             if (!empty($nodeId)) {
                                 $wait += 200;
                                 if (!empty($postData[$fieldName]['tmp'][$nodeType])) {
-                                    $add .= 'setTimeout(locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\'), '.$wait.'); ';
+                                    $add .= 'setTimeout(function() { locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\') }, '.$wait.'); ';
                                     $nodeId = $nodeType;
                                 }
-                                $html .= 'setTimeout(locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\'), '.$wait.'); ';
+                                $html .= 'setTimeout(function() { locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\') }, '.$wait.'); ';
 
                                 $html .= $add;
                             }
