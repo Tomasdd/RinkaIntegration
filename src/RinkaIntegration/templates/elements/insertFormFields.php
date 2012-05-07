@@ -44,8 +44,9 @@
 
                     if (!empty($postData[$fieldName])) {
                         $countryNodeId = null;
+                        $wait = 0;
                         $html .= '<script type="text/javascript">';
-                        $html .= 'jQuery(document).ready(function() { function locationServiceBuffer() {';
+                        $html .= 'jQuery(document).ready(function() { function locationServiceBuffer() { ';
                         foreach ($postData[$fieldName] as $nodeType => $nodeId) {
                             if ($nodeType == 'tmp') {
                                 continue;
@@ -59,11 +60,12 @@
                             }
 
                             if (!empty($nodeId)) {
+                                $wait += 200;
                                 if (!empty($postData[$fieldName]['tmp'][$nodeType])) {
-                                    $add .= 'locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\'); ';
+                                    $add .= 'setTimeout(locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\'), '.$wait.'); ';
                                     $nodeId = $nodeType;
                                 }
-                                $html .= 'locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\'); ';
+                                $html .= 'setTimeout(locationService.selectOption(\'' . $nodeId . '\', \'' . $nodeType . '\', \'' . $countryNodeId . '\'), '.$wait.'); ';
 
                                 $html .= $add;
                             }
