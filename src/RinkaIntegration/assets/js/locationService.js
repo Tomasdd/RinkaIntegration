@@ -70,7 +70,7 @@ var locationService = {
     },
 
     getChildren: function (nodeId, nodeType) {
-        if (nodeId == nodeType) {
+        if (nodeId == '') {
             return false;
         }
         if (!locationService.isLocationServiceReady()) {
