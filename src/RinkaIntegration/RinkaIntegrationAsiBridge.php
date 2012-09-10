@@ -224,7 +224,7 @@ class RinkaIntegrationAsiBridge {
 
             foreach ($postData['phone_numbers'] as $key => $phoneNumber) {
                 try {
-                    $phoneNumber   = intval($phoneNumber);
+                    $phoneNumber = preg_replace('/[^\d]+/', '', $phoneNumber);
 
                     if (empty($phoneNumber)) {
                         $this->validationErrors[] = 'phone_numbers['.$key.']';
