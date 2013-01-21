@@ -120,7 +120,11 @@
                         } else {
                             $value = isset($postData[$fieldName]) ? $postData[$fieldName] : '';
                         }
-                        echo '<input type="text" name="'.$fieldName.'" value="'.$this->escape($value).'" />';
+                        echo '<input type="text" name="'.$fieldName.'" value="'.$this->escape($value).'" ';
+                        if ($fieldName == 'nuomojama_nuo') {
+                           echo ' class="datepicker" readonly="readonly" ';
+                        }
+                        echo ' />';
                     }
                     break;
                 case 'RinkaAsiValueTypeSelect':
@@ -180,14 +184,14 @@
         <div class="RinkaIntegration_fieldDescription">Skelbimo galiojimo terminai</div>
         <div class="clear"></div>
         &nbsp;&nbsp;Nuo
-        <input type="text" name="publish_date" value="<?php echo !empty($postData['publish_date']) ? $postData['publish_date'] : date('Y-m-d'); ?>"/>
+        <input class="datepicker" readonly="readonly" type="text" name="publish_date" value="<?php echo !empty($postData['publish_date']) ? $postData['publish_date'] : date('Y-m-d'); ?>"/>
         <?php
             if (isset($validationErrors['publish_date'])) {
                 echo '<img src="'.$this->config->getUrl('assets').'/images/stop.png" alt="Klaida!" />';
             }
         ?>
         iki
-        <input type="text" name="publish_until" value="<?php echo !empty($postData['publish_until']) ? $postData['publish_until'] : date('Y-m-d', strtotime('+3 month')); ?>" />
+        <input class="datepicker" readonly="readonly" type="text" name="publish_until" value="<?php echo !empty($postData['publish_until']) ? $postData['publish_until'] : date('Y-m-d', strtotime('+3 month')); ?>" />
         <?php
             if (isset($validationErrors['publish_until'])) {
                 echo '<img src="'.$this->config->getUrl('assets').'/images/stop.png" alt="Klaida!" />';
@@ -195,3 +199,13 @@
         ?>
     </div>
 </div>
+
+<!-- Attach jQuery datepicker to date type fields -->
+<script>
+    $(function() {
+       $('.datepicker').datepicker({
+           dateFormat : 'yy-mm-dd'           
+       });       
+       $(".ui-datepicker").draggable();
+    });
+</script>

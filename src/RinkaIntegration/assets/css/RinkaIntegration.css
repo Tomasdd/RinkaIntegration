@@ -171,3 +171,7 @@ div.pagination span.disabled {
     padding: 3px;
     margin-bottom: 1px;
 }
+
+div.ui-datepicker{
+    font-size:12px;     
+}

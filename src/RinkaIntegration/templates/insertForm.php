@@ -6,8 +6,11 @@
 
     var locationServiceUri = '<?php echo $this->config->getConfigValue(array('locationServiceUri')); ?>';
 </script>
-<script src="<?php echo $this->config->getUrl('assets'); ?>/js/jquery.min.js" type="text/javascript"></script>
-<script src="<?php echo $this->config->getUrl('assets'); ?>/js/jquery-ui.custom.min.js" type="text/javascript"></script>
+
+<script src="<?php echo $this->config->getUrl('assets'); ?>/js/jquery.min.js" type="text/javascript"></script>-->
+<script src="<?php echo $this->config->getUrl('assets'); ?>/js/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?php echo $this->config->getUrl('assets'); ?>/css/jquery-ui.css">
+       
 <script src="<?php echo $this->config->getUrl('assets'); ?>/js/htree.js?20120221" type="text/javascript"></script>
 <script src="<?php echo $this->config->getUrl('assets'); ?>/js/script.js" type="text/javascript"></script>
 <script src="<?php echo $this->config->getUrl('assets'); ?>/js/locationService.js" type="text/javascript"></script>

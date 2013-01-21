@@ -220,8 +220,17 @@ class RinkaIntegrationAsiBridge {
 
             $entry = $exportDocument->createNewInsertEntry($category);
             $entry->setLocalId(microtime(true));
-            $entry->setUserIp($_SERVER['REMOTE_ADDR']);
-
+            $entry->setUserIp($_SERVER['REMOTE_ADDR']);       
+            
+            if (!empty($postData['nuomojama_nuo'])) {
+                try {
+                    $nuomojamaNuo = new DateTime($postData['nuomojama_nuo']);
+                    $nuomojamaNuo = $nuomojamaNuo->format('Y-m-d');
+                } catch (Exception $e) {
+                    $this->validationErrors[] = 'nuomojama_nuo';
+                }
+            }
+            
             foreach ($postData['phone_numbers'] as $key => $phoneNumber) {
                 try {
                     $phoneNumber = preg_replace('/[^\d]+/', '', $phoneNumber);
@@ -291,7 +300,7 @@ class RinkaIntegrationAsiBridge {
                 }
             }
 
-            foreach ($postData as $fieldName => $fieldValue) {
+            foreach ($postData as $fieldName => $fieldValue) {                
                 $addFieldIndex = false;
                 $value = $fieldValue;
 
@@ -364,7 +373,7 @@ class RinkaIntegrationAsiBridge {
                             }
 
                             $value = array($_value);
-                            break;
+                            break;                        
                         default:
                             $value = array($value);
                             break;
